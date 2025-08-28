@@ -1,10 +1,10 @@
 # Snowflake SQL Practice
 
-This repository contains my practice with **Snowflake SQL** commands, covering both basic and advanced features.
+This repository contains my practice with **Snowflake SQL** commands, covering both basic and advanced features such as file formats, staging, copying data from external sources, JSON parsing, warehouses, and role-based access.
 
 ---
 
-## 📂 Current Files Included
+## 📂 Files Included
 
 ### 1. `fileformat.sql`
 Covers working with **JSON data** in Snowflake:
@@ -17,6 +17,8 @@ Covers working with **JSON data** in Snowflake:
   - Type casting (`::string`, `::int`).
 - Extracting nested JSON fields (`RAW_FILE:job.salary`, `RAW_FILE:prev_company[0]`).
 - Flattening arrays (e.g., `spoken_languages`) into rows with `table(flatten(...))`.
+
+---
 
 ### 2. `stage&copy.sql`
 Covers **staging and copying CSV data** in Snowflake:
@@ -31,6 +33,16 @@ Covers **staging and copying CSV data** in Snowflake:
 
 ---
 
+### 3. `create-wh-roles-grants.sql`
+Covers **warehouses, roles, users, and grants** in Snowflake:
+- Creating warehouses (`DS_WH`, `DBA_WH`) with auto-suspend, auto-resume, and scaling policies.
+- Creating roles (`DATA_SCIENTIST`, `DBA`) and granting warehouse usage.
+- Creating users (`DS1`, `DS2`, `DS3`, `DBA1`, `DBA2`) with default roles and warehouses.
+- Assigning roles to users.
+- Dropping users, roles, and warehouses to clean up.
+
+---
+
 ## 🚀 Key Concepts Practiced
 - **Stages**: External stages referencing AWS S3.
 - **File Formats**: JSON and CSV parsing.
@@ -38,10 +50,13 @@ Covers **staging and copying CSV data** in Snowflake:
 - **VARIANT Type**: Storing semi-structured data.
 - **Flatten Function**: Handling arrays within JSON.
 - **Transformations on Load**: Conditional logic inside `COPY INTO`.
+- **Warehouses**: Creating, scaling, and configuring warehouses.
+- **Roles & Grants**: Managing access control via RBAC.
+- **User Management**: Creating, assigning, and dropping users.
 
 ---
 
 ## 📖 Usage
 1. Clone the repo:
    ```bash
-   git clone https://github.com/itsAryanS/snowflake.git
+   git clone https://github.com/itsAryanS/snowflake-sql-practice.git
